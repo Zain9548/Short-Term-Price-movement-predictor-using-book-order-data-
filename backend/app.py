@@ -11,7 +11,7 @@ import time
 app = Flask(__name__)
 CORS(app)
 
-MODEL_PATH = "models/orderbook_model.pkl"
+MODEL_PATH = "backend/models/orderbook_model.pkl"
 model = joblib.load(MODEL_PATH)
 
 SOCKET_URL = "wss://fstream.binance.com/ws/btcusdt@depth"
