@@ -1,9 +1,8 @@
+flask
+flask-cors
 pandas
-numpy
+joblib
+websocket-client
+gunicorn
 scikit-learn
 xgboost
-joblib
-flask
-websocket-client
-gitignore
-
