@@ -2,14 +2,14 @@
 
 
 ### 🔹 Live Dashboard View
-![Dashboard Screenshot](assets/dashboard.png)
+![Dashboard Screenshot](https://github.com/Zain9548/Short-Term-Price-movement-predictor-using-book-order-data-/blob/main/WhatsApp%20Image%202026-02-12%20at%2012.33.31%20PM.jpeg)
 
 ### 🔹 Live Signal + Feature Engineering Output
-![Signal Screenshot](assets/signal.png)
+![Signal Screenshot](https://github.com/Zain9548/Short-Term-Price-movement-predictor-using-book-order-data-/blob/main/WhatsApp%20Image%202026-02-12%20at%2012.33.31%20PM.jpeg)
 
 
 ▶️ **Watch Full Demo Video Here:**  
-📌 [Click Here to Watch the Demo Video]()
+📌 [Click Here to Watch the Demo Video](https://drive.google.com/file/d/1ffSwCCmvpqMVZU91_DmMfVQBi7x_TU4V/view?usp=drive_link)
 
 
 
