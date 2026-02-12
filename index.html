@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Order Book Predictor</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- TradingView Widget -->
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+</head>
+
+<body>
+
+  <!-- TOP HEADER -->
+  <header class="topHeader">
+
+    <div class="brand">
+      <h1>📈 Short term price movement predictor using order book data</h1>
+      <p>BTCUSDT | Binance Futures WebSocket | ML Signal Dashboard</p>
+    </div>
+
+    <div class="topRight">
+
+      <div class="symbolBox">
+        <span class="label">Symbol</span>
+        <span class="value">BTCUSDT</span>
+      </div>
+
+      <div class="statusBox">
+        <span class="dot" id="dot"></span>
+        <span id="statusText">Connecting...</span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="mainLayout">
+
+    <!-- LEFT: CHART -->
+    <section class="chartPanel card">
+
+      <div class="panelHeader">
+        <h2>📊 Live BTCUSDT Chart</h2>
+        <p>TradingView Candlestick (1 Minute)</p>
+      </div>
+
+      <div id="tv_chart_container"></div>
+
+    </section>
+
+    <!-- RIGHT: SIDE PANEL -->
+    <section class="sidePanel">
+
+      <!-- SIGNAL CARD -->
+      <div class="card signalCard">
+        <h2>Live Signal</h2>
+
+        <div id="signalBox" class="signal neutral">WAITING</div>
+
+        <div class="smallRow">
+          <div class="miniBox">
+            <span class="miniLabel">Last Update</span>
+            <span class="miniValue" id="lastUpdate">-</span>
+          </div>
+
+          <div class="miniBox">
+            <span class="miniLabel">Prediction Mode</span>
+            <span class="miniValue">30 Second</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURES CARD -->
+      <div class="card featuresCard">
+        <h2>Live Features</h2>
+
+        <div class="featuresGrid">
+
+          <div class="featureBox">
+            <p class="fLabel">Imbalance</p>
+            <p class="fValue" id="imbalance">-</p>
+          </div>
+
+          <div class="featureBox">
+            <p class="fLabel">Lag1</p>
+            <p class="fValue" id="lag1">-</p>
+          </div>
+
+          <div class="featureBox">
+            <p class="fLabel">Avg5</p>
+            <p class="fValue" id="avg5">-</p>
+          </div>
+
+          <div class="featureBox">
+            <p class="fLabel">Change</p>
+            <p class="fValue" id="change">-</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- IMBALANCE CHART -->
+      <div class="card imbalanceChartCard">
+        <h2>📉 Imbalance Trend</h2>
+        <p class="desc">Order book buy/sell pressure graph</p>
+
+        <canvas id="imbalanceChart"></canvas>
+      </div>
+
+      <!-- HISTORY TABLE -->
+      <div class="card historyCard">
+        <h2>📌 Prediction History</h2>
+        <p class="desc">Last 15 predictions</p>
+
+        <div class="tableWrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Signal</th>
+                <th>Imbalance</th>
+              </tr>
+            </thead>
+            <tbody id="historyTable">
+              <tr>
+                <td colspan="3">Waiting for data...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    ⚡ Powered by Binance WebSocket + XGBoost | Built by Mohammed Azeem
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
